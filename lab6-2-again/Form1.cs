@@ -23,5 +23,10 @@ namespace lab6_2_again
             this.chucvuTableAdapter.Fill(this.qlcbDataSet.chucvu);
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
