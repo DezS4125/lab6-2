@@ -15,7 +15,7 @@ namespace lab6_2_again
     {
         int mscb;
         string name;
-        string position;
+        int position;
         int hour;
         int price;
         public Form1()
@@ -70,14 +70,32 @@ namespace lab6_2_again
             {
                 string strInsert = "insert into canbo values (@maCb, @tenCB, @chucvuCB, @soGioGiang, @donGia)";
                 clsDatabase.openConnection();
+                SqlCommand con = new SqlCommand(strInsert, clsDatabase.con);
+                SqlParameter p1 = new SqlParameter("@maCb", SqlDbType.Int);
+                p1.Value = mscb;
+                SqlParameter p2 = new SqlParameter("@tenCB", SqlDbType.NVarChar);
+                p2.Value = name;
+                SqlParameter p3 = new SqlParameter("@chucvuCB", SqlDbType.Int);
+                p3.Value = position;
+                SqlParameter p4 = new SqlParameter("@soGioGiang", SqlDbType.Int);
+                p4.Value = hour;
+                SqlParameter p5 = new SqlParameter("@donGia", SqlDbType.Money);
+                p5.Value = price;
 
-
+                con.Parameters.Add(p1);
+                con.Parameters.Add(p2);
+                con.Parameters.Add(p3);
+                con.Parameters.Add(p4);
+                con.Parameters.Add(p5);
+                con.ExecuteNonQuery();
+                MessageBox.Show("Insert successfully!!!");
                 clsDatabase.closeConnection();
+                clearAllField();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                mscb = 0;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             btnAdd.Enabled = true;
@@ -98,7 +116,7 @@ namespace lab6_2_again
         private void cbPosition_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbPosition.SelectedIndex == -1) return;
-            position = cbPosition.Text;
+            position = Convert.ToInt32(cbPosition.SelectedValue);
         }
 
         private void txtHour_TextChanged(object sender, EventArgs e)
