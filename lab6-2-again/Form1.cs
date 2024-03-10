@@ -103,6 +103,7 @@ namespace lab6_2_again
 
         private void txtHour_TextChanged(object sender, EventArgs e)
         {
+            if (txtHour.Text == "") return;
             try
             {
                 hour = Convert.ToInt32(txtHour.Text);
@@ -110,11 +111,13 @@ namespace lab6_2_again
             catch (Exception)
             {
                 MessageBox.Show("Hour must be integer");
+                txtHour.Clear();
             }
         }
 
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
+            if (txtPrice.Text == "") return;
             try
             {
                 price = Convert.ToInt32(txtPrice.Text);
@@ -122,6 +125,7 @@ namespace lab6_2_again
             catch (Exception)
             {
                 MessageBox.Show("Price must be integer");
+                txtPrice.Clear();
             }
 
         }
