@@ -60,6 +60,7 @@
             this.cbPosition.Size = new System.Drawing.Size(156, 21);
             this.cbPosition.TabIndex = 0;
             this.cbPosition.ValueMember = "maCV";
+            this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
             // 
             // chucvuBindingSource
             // 
@@ -177,6 +178,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(203, 20);
             this.txtName.TabIndex = 11;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtHour
             // 
@@ -184,6 +186,7 @@
             this.txtHour.Name = "txtHour";
             this.txtHour.Size = new System.Drawing.Size(156, 20);
             this.txtHour.TabIndex = 12;
+            this.txtHour.TextChanged += new System.EventHandler(this.txtHour_TextChanged);
             // 
             // txtPrice
             // 
@@ -191,6 +194,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(156, 20);
             this.txtPrice.TabIndex = 13;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // Form1
             // 

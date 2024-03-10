@@ -66,6 +66,19 @@ namespace lab6_2_again
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string strInsert = "insert into canbo values (@maCb, @tenCB, @chucvuCB, @soGioGiang, @donGia)";
+                clsDatabase.openConnection();
+
+
+                clsDatabase.closeConnection();
+
+            }
+            catch (Exception)
+            {
+                mscb = 0;
+            }
 
             btnAdd.Enabled = true;
             btnSave.Enabled = false;
@@ -75,6 +88,42 @@ namespace lab6_2_again
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            name = txtName.Text;
+        }
+
+        private void cbPosition_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbPosition.SelectedIndex == -1) return;
+            position = cbPosition.Text;
+        }
+
+        private void txtHour_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                hour = Convert.ToInt32(txtHour.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hour must be integer");
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                price = Convert.ToInt32(txtPrice.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Price must be integer");
+            }
+
         }
     }
 }
