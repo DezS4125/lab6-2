@@ -28,5 +28,23 @@ namespace lab6_2_again
         {
 
         }
+        private void clearAllField()
+        {
+            txtMSCB.Clear();
+            txtHour.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+            cbPosition.SelectedIndex = -1;
+            txtHour.Focus();
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

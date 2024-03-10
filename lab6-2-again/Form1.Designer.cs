@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.qlcbDataSet = new lab6_2_again.qlcbDataSet();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.chucvuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qlcbDataSet = new lab6_2_again.qlcbDataSet();
             this.chucvuTableAdapter = new lab6_2_again.qlcbDataSetTableAdapters.chucvuTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,37 +39,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.qlcbDataSet)).BeginInit();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtMSCB = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtHour = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chucvuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlcbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbPosition
             // 
-            this.comboBox1.DataSource = this.chucvuBindingSource;
-            this.comboBox1.DisplayMember = "tenCV";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 165);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "maCV";
-            // 
-            // qlcbDataSet
-            // 
-            this.qlcbDataSet.DataSetName = "qlcbDataSet";
-            this.qlcbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cbPosition.DataSource = this.chucvuBindingSource;
+            this.cbPosition.DisplayMember = "tenCV";
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(119, 165);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(156, 21);
+            this.cbPosition.TabIndex = 0;
+            this.cbPosition.ValueMember = "maCV";
             // 
             // chucvuBindingSource
             // 
             this.chucvuBindingSource.DataMember = "chucvu";
             this.chucvuBindingSource.DataSource = this.qlcbDataSet;
+            // 
+            // qlcbDataSet
+            // 
+            this.qlcbDataSet.DataSetName = "qlcbDataSet";
+            this.qlcbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // chucvuTableAdapter
             // 
@@ -132,86 +132,88 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Đơn giá";
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(46, 310);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(46, 310);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Location = new System.Drawing.Point(144, 310);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(144, 310);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(247, 310);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Đóng";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(247, 310);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Đóng";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtMSCB
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtMSCB.Location = new System.Drawing.Point(119, 91);
+            this.txtMSCB.Name = "txtMSCB";
+            this.txtMSCB.ReadOnly = true;
+            this.txtMSCB.Size = new System.Drawing.Size(100, 20);
+            this.txtMSCB.TabIndex = 10;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtName.Location = new System.Drawing.Point(119, 132);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(203, 20);
+            this.txtName.TabIndex = 11;
             // 
-            // textBox3
+            // txtHour
             // 
-            this.textBox3.Location = new System.Drawing.Point(119, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtHour.Location = new System.Drawing.Point(119, 201);
+            this.txtHour.Name = "txtHour";
+            this.txtHour.Size = new System.Drawing.Size(156, 20);
+            this.txtHour.TabIndex = 12;
             // 
-            // textBox4
+            // txtPrice
             // 
-            this.textBox4.Location = new System.Drawing.Point(119, 242);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtPrice.Location = new System.Drawing.Point(119, 242);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(156, 20);
+            this.txtPrice.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 371);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtHour);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtMSCB);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbPosition);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qlcbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chucvuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qlcbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,7 +221,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPosition;
         private qlcbDataSet qlcbDataSet;
         private System.Windows.Forms.BindingSource chucvuBindingSource;
         private qlcbDataSetTableAdapters.chucvuTableAdapter chucvuTableAdapter;
@@ -229,13 +231,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtMSCB;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtHour;
+        private System.Windows.Forms.TextBox txtPrice;
     }
 }
 
